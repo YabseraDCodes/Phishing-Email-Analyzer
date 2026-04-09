@@ -1,0 +1,19 @@
+From: "Microsoft Security Center" <account-alerts@micr0soft-verify-access.xyz>
+To: target@example.com
+Subject: Immediate action required: Your mailbox will be disabled today
+Date: Thu, 09 Apr 2026 08:25:00 +0300
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+
+Dear customer,
+
+We detected suspicious sign-in activity on your mailbox and your account will be suspended within 2 hours unless you verify ownership now.
+
+Use the secure verification link below immediately:
+https://bit.ly/microsoft-security-check
+
+To prevent permanent deactivation, reply with your current password and confirm your backup email.
+
+Failure to act now may result in complete data loss.
+
+Security Operations Team

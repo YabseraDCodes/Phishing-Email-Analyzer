@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Email Analyzer</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup-shell">
+    <header>
+      <p class="eyebrow">Browser Extension</p>
+      <h1>Phishing Email Analyzer</h1>
+      <p class="subtle">Paste message content or scan the open tab for phishing signals.</p>
+    </header>
+
+    <label>
+      Sender
+      <input id="sender" type="text" placeholder="sender@example.com">
+    </label>
+
+    <label>
+      Subject
+      <input id="subject" type="text" placeholder="Subject">
+    </label>
+
+    <label>
+      Message or page content
+      <textarea id="body" rows="8" placeholder="Paste the email or use Scan Current Tab"></textarea>
+    </label>
+
+    <div class="actions">
+      <button id="analyzeButton" type="button">Analyze</button>
+      <button id="scanTabButton" type="button" class="ghost">Scan Current Tab</button>
+    </div>
+
+    <p id="status" class="status subtle">Open an email in Gmail or Outlook, then click Scan Current Tab.</p>
+
+    <section id="result" class="result hidden">
+      <div class="score-row">
+        <strong id="scoreLabel">0/100</strong>
+        <span id="levelLabel">Low risk</span>
+      </div>
+      <p id="summary" class="subtle"></p>
+      <div>
+        <h2>Top findings</h2>
+        <ul id="findings"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="analyzer.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

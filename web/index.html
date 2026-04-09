@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Email Analyzer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Phishing Email Analyzer</p>
+      <h1>Inspect suspicious emails before they inspect you.</h1>
+      <p class="lead">
+        Paste an email, load an <code>.eml</code> file, or review sender and link details to estimate phishing risk.
+      </p>
+    </section>
+
+    <section class="panel panel-form">
+      <div class="panel-heading">
+        <h2>Analyze message</h2>
+        <label class="file-picker">
+          <input id="emlFile" type="file" accept=".eml,.txt,message/rfc822">
+          <span>Load file</span>
+        </label>
+      </div>
+
+      <form id="analysisForm" class="form-grid">
+        <label>
+          Sender
+          <input id="sender" type="text" placeholder="security@example.com">
+        </label>
+
+        <label>
+          Subject
+          <input id="subject" type="text" placeholder="Urgent: Verify your account">
+        </label>
+
+        <label class="full-width">
+          Email body
+          <textarea id="body" rows="12" placeholder="Paste the email content here..."></textarea>
+        </label>
+
+        <div class="actions full-width">
+          <button type="submit">Analyze Email</button>
+          <button id="loadSample" type="button" class="ghost">Use sample phishing email</button>
+          <button id="clearForm" type="button" class="ghost">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="panel panel-results hidden" aria-live="polite">
+      <div class="score-band">
+        <div>
+          <p class="caption">Risk score</p>
+          <h2><span id="riskScore">0</span>/100</h2>
+        </div>
+        <div>
+          <p class="caption">Assessment</p>
+          <h3 id="riskLevel">Low risk</h3>
+          <p id="summary" class="summary"></p>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div>
+          <h3>Findings</h3>
+          <ul id="findingsList" class="stacked-list"></ul>
+        </div>
+        <div>
+          <h3>Recommendations</h3>
+          <ul id="recommendationsList" class="stacked-list"></ul>
+        </div>
+      </div>
+
+      <div class="result-grid">
+        <div>
+          <h3>Links found</h3>
+          <ul id="urlsList" class="stacked-list compact"></ul>
+        </div>
+        <div>
+          <h3>Emails found</h3>
+          <ul id="emailsList" class="stacked-list compact"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="../shared/analyzer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
